@@ -79,15 +79,9 @@
   "portfolio":{
     "projects": [
       {
-        "title":"Resume Website",
-        "category":"A React based resume website template",
-        "image":"resume-website.jpg",
-        "url":"http://www.timbakerdev.com"
-      },
-      {
         "title":"Ontario Gradebook",
         "category":"(MVP Only) A Meteor Single-Page application design for Ontario Teachers",
-        "image":"ontariogradebook.png",
+        "image":"ontariogradebook.PNG",
         "url":"https://ontariogradebook.ca/"
       }
     ]
