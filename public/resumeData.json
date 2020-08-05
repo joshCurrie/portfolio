@@ -1,7 +1,7 @@
 {
   "main": {
     "name":"Joshua Currie",
-    "description":"Software Developer",
+    "description":"Software Developer based out of Mississauga. Currently, I work for Paybright as a Full-Stack Development focusing on .NET Core API's",
     "image":"profilepic.jpg",
     "bio":"Passionate software developer with 3 years of full-time development experience with a knack for picking things up quickly. I love learning and expanding current skills and thrive in environments that skill building and growth. I have interest in greenfield development environment's and am currently interested in  .NET Core API development.",
     "contactmessage":"Here is where you should write your message to readers to have them get in contact with you.",
@@ -10,133 +10,79 @@
     "github":"https://github.com/joshCurrie/",
     "project":"test project",
     "address":{
-      "street":"(Street name)",
-      "city":"Mississauga",
+      "street":"Mississauga",
+      "city":"",
       "state":"Ontario",
-      "zip": "(Your Zip/Postal Code)"
+      "zip": "L5C 4E8"
     },
     "website": "none",
     "resumedownload":"resume here",
     "social":[
       {
-        "name":"facebook",
-        "url":"https://github.com/nordicgiant2/react-nice-resume",
-        "className":"fa fa-facebook"
-      },
-      {
-        "name":"twitter",
-        "url":"http://twitter.com",
-        "className":"fa fa-twitter"
-      },
-      {
         "name":"linkedin",
-        "url":"https://www.linkedin.com/in/tim-baker-8420009a/",
+        "url":"https://www.linkedin.com/in/curriejoshua/",
         "className":"fa fa-linkedin"
       },
       {
-        "name":"instagram",
-        "url":"http://instagram.com/tbaker_x",
-        "className":"fa fa-instagram"
-      },
-      {
         "name":"github",
-        "url":"https://github.com/nordicgiant2/react-nice-resume",
+        "url":"https://github.com/joshCurrie/",
         "className":"fa fa-github"
       }
     ]
   },
   "resume":{
-    "skillmessage":"Here you can create a short write-up of your skills to show off to employers",
+    "skillmessage":"Here are a couple of skills I have picked through-out my full-time work and internships.",
     "education":[
       {
-        "school":"University?",
-        "degree":"Masters in Beer tasting",
-        "graduated":"April 2007",
-        "description":"Describe your experience at school, what you learned, what useful skills you have acquired etc."
-      },
-      {
-        "school":"School #1 Maybe College?",
-        "degree":"What did you study 101",
-        "graduated":"March 2003",
-        "description":"Describe your experience at school, what you learned, what useful skills you have acquired etc."
+        "school":"University of Waterloo",
+        "degree":"Bachelors of Computing and Financial Management",
+        "graduated":"August 2019",
+        "description":"Here I laid a foundation of knowledge for computer science and development. Relevant course work included courses on software design principals, specifically Singleton, MVC, and Factory design patterns, along with in-depth language specific material involving memory managment in Java, C++, and C."
       }
     ],
+    "internships": [],
     "work":[
       {
-        "company":"Awesome Design Studio",
-        "title":"Senior UX God ",
-        "years":"March 2010 - Present",
-        "description":"Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
-      },
-      {
-        "company":"Super Cool Studio",
-        "title":"Junior bug fixer",
-        "years":"March 2007 - February 2010",
-        "description":"Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+        "company":"Paybright",
+        "title":"Software Developer ",
+        "years":"September 2019 - Present",
+        "description":"The majority of my time at Paybright I have been a swiss army knife of a developer. I have been apart of many new greenfield development initatives that have been introduced since I started. These projects include creating from scratch Paybright's REACT component library, creating Paybright's first .NET Core API's, and the integration with Paybright's partner EasyFinancial. \n\n Being a swiss army knife has opened up many learning opportunities for myself. Recently I have been focused on learning and developing in .NET Core, specifically .NET Core API development. Noteably, I created the standards for Paybright's .NET Core versioning. Which included research into the industry standard for versioning to create a proof of concept and prototype. These standards will be used to help transition Paybright into their Target State Architecture.\nCurrently, I am apart of Paybright's Credit guild, which involves becoming the subject matter experts on everything credit in our code base. As Paybright grows and expands, my team has been tasked with managing our Credit solution. This includes managing our internal credit models, while ensuring integrations with 3rd party credit bureaus are fast and secure. "
       }
     ],
     "skills":[
       {
-        "name":"Python",
-        "level":"60%"
-      },
-      {
-        "name":"VueJs",
+        "name":".NET Core",
         "level":"55%"
       },
       {
-        "name":"ReactJs",
-        "level":"50%"
+        "name":"C#",
+        "level":"70%"
       },
       {
         "name":"CSS",
         "level":"90%"
       },
       {
-        "name":"PHP",
-        "level":"80%"
-      },
-      {
-        "name":"Swift",
-        "level":"50%"
+        "name":"HTML",
+        "level":"90%"
       },
       {
         "name":"JAVA",
-        "level":"80%"
+        "level":"50%"
+      },
+      {
+        "name":"MVC",
+        "level":"70%"
       }
     ]
   },
   "portfolio":{
     "projects": [
       {
-        "title":"Canadian Wanderlust",
-        "category":"My Travel Blog for my post-university travels",
-        "image":"canadian-wanderlust.jpg",
-        "url":"https://www.canadianwanderlust.com"
-      },
-      {
-        "title":"Fury Fighting Gear",
-        "category":"(offline now) A fighting gear company I started",
-        "image":"fury-fighting-gear.jpg",
-        "url":"http://www.timbakerdev.com"
-      },
-      {
-        "title":"Original Thai Food",
-        "category":"Website I built for a restaurant I like in Thailand",
-        "image":"original-thai-food.jpg",
-        "url":"http://www.timbakerdev.com/originalthaifood.github.io"
-      },
-      {
-        "title":"Resume Website",
-        "category":"A React based resume website template",
-        "image":"resume-website.jpg",
-        "url":"http://www.timbakerdev.com"
-      },
-      {
-        "title":"Smirkspace",
-        "category":"(MVP Only) A React and Meteor based chat University project.",
-        "image":"smirkspace.jpg",
-        "url":"http://www.smirkspace.com"
+        "title":"Ontario Gradebook",
+        "category":"(MVP Only) A Meteor Single-Page application design for Ontario Teachers",
+        "image":"ontariogradebook.png",
+        "url":"https://ontariogradebook.ca/"
       }
     ]
   }
