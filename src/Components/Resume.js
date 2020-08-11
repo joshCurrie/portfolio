@@ -34,26 +34,64 @@ class Resume extends Component {
             <p className="info">
               {work.title}
               <span>&bull;</span> <em className="date">{work.years}</em>
-            </p>            
-            <CollapseableResumeContent Content={[work.description1, work.description2, work.description3]} />
-            {/* <p>{work.description1}</p>
-            <p>{work.description2}</p>
-            <p>{work.description3}</p> */}
-          </div>
-        );
-      });
-      var internships = this.props.data.internships.map((internships) => {
-        return (
-          <div key={internships.company}>
-            <h3>{internships.company}</h3>
-            <p className="info">
-              {internships.title}
-              <span>&bull;</span> <em className="date">{internships.years}</em>
             </p>
-            <CollapseableResumeContent Content={[internships.description]} />
+            <CollapseableResumeContent
+              Content={[
+                work.description1,
+                work.description2,
+                work.description3,
+              ]}
+            />
           </div>
         );
       });
+      var internships = this.props.data.internships.map(
+        (internships, index) => {
+          if (index === 0) {
+            return (
+                <div className="row internships" key={internships.company}>
+                  <h3>{internships.company}</h3>
+                  <p className="info">
+                    {internships.title}
+                    <span>&bull;</span>{" "}
+                    <em className="date">{internships.years}</em>
+                  </p>
+                  <CollapseableResumeContent
+                    Content={[internships.description]}
+                  />
+                </div>
+            );
+          } else if (index === 4) {
+            return (
+              <div className="row row-caveat" key={internships.company}>
+                <h3>{internships.company}</h3>
+                <p className="info">
+                  {internships.title}
+                  <span>&bull;</span>{" "}
+                  <em className="date">{internships.years}</em>
+                </p>
+                <CollapseableResumeContent
+                  Content={[internships.description]}
+                />
+              </div>
+            );
+          } else {
+            return (
+                <div className="row internships row-caveat" key={internships.company}>
+                  <h3>{internships.company}</h3>
+                  <p className="info">
+                    {internships.title}
+                    <span>&bull;</span>{" "}
+                    <em className="date">{internships.years}</em>
+                  </p>
+                  <CollapseableResumeContent
+                    Content={[internships.description]}
+                  />
+                </div>
+            );
+          }
+        }
+      );
 
       var skills = this.props.data.skills.map((skills) => {
         var className = "bar-expand " + skills.name.toLowerCase();

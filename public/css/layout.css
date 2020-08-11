@@ -293,6 +293,10 @@ ul#nav li.current a {
   padding-right: 10%;
 }
 
+.row-caveat {
+  padding-top: 48px;
+}
+
 .education,
 .work,
 .internships {
@@ -311,7 +315,7 @@ ul#nav li.current a {
   margin-left: 5px;
 }
 #resume .date {
-  font: 15px/24px "opensans-regular", sans-serif;
+  font: 15px/24px "opensans-italic", sans-serif;
   margin-top: 6px;
 }
 

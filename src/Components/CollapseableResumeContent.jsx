@@ -6,17 +6,16 @@ const CollapseableResumeContent = ({ Content }) => {
   const [opened, isToggleOpened] = useState(false);
 
   if (Content.toString() === "") {
-    return (null);
+    return null;
   }
 
   if (opened) {
     return (
-      <p onClick={() => isToggleOpened(!opened)}>
-        
+      <div onClick={() => isToggleOpened(!opened)}>
         <Collapse isOpened={opened}>
-        {Content.map((value, index) => {
-          return <p>{value}</p>
-        })}
+          {Content.map((value, index) => {
+            return <p>{value}</p>;
+          })}
         </Collapse>
 
         <p className="scrolldown center-text">
@@ -24,11 +23,11 @@ const CollapseableResumeContent = ({ Content }) => {
             <i className="icon-up-open"></i>
           </a>
         </p>
-      </p>
+      </div>
     );
   } else {
     return (
-      <p onClick={() => isToggleOpened(!opened)}>
+      <div onClick={() => isToggleOpened(!opened)}>
         <Collapse isOpened={!opened}>
           <p className="scrolldown center-text">
             <a className="smoothscroll">
@@ -36,7 +35,7 @@ const CollapseableResumeContent = ({ Content }) => {
             </a>
           </p>
         </Collapse>
-      </p>
+      </div>
     );
   }
 };
@@ -47,14 +46,14 @@ CollapseableResumeContent.propTypes = {
    */
   Content: PropTypes.array,
   /*
-  * Paragraphs: If content to be displayed in more than 1 paragraph
-  */
- Paragraph: PropTypes.number
+   * Paragraphs: If content to be displayed in more than 1 paragraph
+   */
+  Paragraph: PropTypes.number,
 };
 
 CollapseableResumeContent.defaultProps = {
-  Content: [ "Nothing to show here!" ],
-  Paragraph: 1
+  Content: ["Nothing to show here!"],
+  Paragraph: 1,
 };
 
 export default CollapseableResumeContent;
