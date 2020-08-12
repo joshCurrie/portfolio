@@ -124,6 +124,24 @@ header .scrolldown a:hover {
   color: #0762f9;
 }
 
+/* social links */
+header .social-links {
+  margin: 18px 0 30px 0;
+  padding: 0;
+  font-size: 30px;
+}
+header .social-links li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  margin-left: 42px;
+  color: #f06000;
+}
+
+header .social-links li:first-child {
+  margin-left: 0;
+}
+
 /* primary navigation
 --------------------------------------------------------------------- */
 #nav-wrap ul,
