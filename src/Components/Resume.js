@@ -1,15 +1,8 @@
 import React, { Component } from "react";
 import CollapseableResumeContent from "./CollapseableResumeContent.jsx";
+import SkillsBar from "./SkillsBar.jsx";
 
 class Resume extends Component {
-  getRandomColor() {
-    var letters = "0123456789ABCDEF";
-    var color = "#";
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }
 
   render() {
     if (this.props.data) {
@@ -49,17 +42,17 @@ class Resume extends Component {
         (internships, index) => {
           if (index === 0) {
             return (
-                <div className="row internships" key={internships.company}>
-                  <h3>{internships.company}</h3>
-                  <p className="info">
-                    {internships.title}
-                    <span>&bull;</span>{" "}
-                    <em className="date">{internships.years}</em>
-                  </p>
-                  <CollapseableResumeContent
-                    Content={[internships.description]}
-                  />
-                </div>
+              <div className="row internships" key={internships.company}>
+                <h3>{internships.company}</h3>
+                <p className="info">
+                  {internships.title}
+                  <span>&bull;</span>{" "}
+                  <em className="date">{internships.years}</em>
+                </p>
+                <CollapseableResumeContent
+                  Content={[internships.description]}
+                />
+              </div>
             );
           } else if (index === 4) {
             return (
@@ -77,33 +70,30 @@ class Resume extends Component {
             );
           } else {
             return (
-                <div className="row internships row-caveat" key={internships.company}>
-                  <h3>{internships.company}</h3>
-                  <p className="info">
-                    {internships.title}
-                    <span>&bull;</span>{" "}
-                    <em className="date">{internships.years}</em>
-                  </p>
-                  <CollapseableResumeContent
-                    Content={[internships.description]}
-                  />
-                </div>
+              <div
+                className="row internships row-caveat"
+                key={internships.company}
+              >
+                <h3>{internships.company}</h3>
+                <p className="info">
+                  {internships.title}
+                  <span>&bull;</span>{" "}
+                  <em className="date">{internships.years}</em>
+                </p>
+                <CollapseableResumeContent
+                  Content={[internships.description]}
+                />
+              </div>
             );
           }
         }
       );
 
       var skills = this.props.data.skills.map((skills) => {
-        var className = "bar-expand " + skills.name.toLowerCase();
+        
         return (
           <li key={skills.name}>
-            <span
-              style={{
-                width: skills.level,
-                backgroundColor: this.getRandomColor(),
-              }}
-              className={className}
-            ></span>
+            <SkillsBar observer={null} name={skills.name} level={skills.level} />
             <em>{skills.name}</em>
           </li>
         );
