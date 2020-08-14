@@ -50,6 +50,7 @@ const SkillsBar = ({ level, name, observer }) => {
         width: level,
         backgroundColor: getColorGradientBasedOnSkill(parseInt(level, 10)),
         textAlign: "center",
+        marginTop: "0.5px"
       }}
       className={className}
     >

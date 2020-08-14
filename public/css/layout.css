@@ -322,6 +322,11 @@ ul#nav li.current a {
   padding-bottom: 24px;
   border-bottom: 1px solid #e8e8e8;
 }
+
+.internships-bottom-border {
+  border-bottom: 1px solid #e8e8e8;
+}
+
 #resume .info {
   font: 16px/24px "librebaskerville-italic", serif;
   color: #6e7881;
@@ -354,9 +359,10 @@ ul#nav li.current a {
 .bars li {
   position: relative;
   margin-bottom: 60px;
-  background: #333;
-  height: 42px;
-  border-radius: 0px;
+  background: white;
+  height: 45px;
+  border: 1px solid black;
+
 }
 .bars li em {
   font: 15px "opensans-bold", sans-serif;

@@ -14,7 +14,7 @@ const SocialNetworks = ({ NetworkData, Color }) => {
 
     if (NetworkData) {
         var networks = NetworkData.map(function(network){
-            return <li key={network.name}><a Style={style} href={network.url}><i className={network.className}></i></a></li>
+            return <li key={network.name}><a style={style} href={network.url}><i className={network.className}></i></a></li>
         });
     }
 

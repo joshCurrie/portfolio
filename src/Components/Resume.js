@@ -3,7 +3,6 @@ import CollapseableResumeContent from "./CollapseableResumeContent.jsx";
 import SkillsBar from "./SkillsBar.jsx";
 
 class Resume extends Component {
-
   render() {
     if (this.props.data) {
       var skillmessage = this.props.data.skillmessage;
@@ -42,7 +41,10 @@ class Resume extends Component {
         (internships, index) => {
           if (index === 0) {
             return (
-              <div className="row internships" key={internships.company}>
+              <div
+                className="internships-bottom-border"
+                key={internships.company}
+              >
                 <h3>{internships.company}</h3>
                 <p className="info">
                   {internships.title}
@@ -56,7 +58,7 @@ class Resume extends Component {
             );
           } else if (index === 4) {
             return (
-              <div className="row row-caveat" key={internships.company}>
+              <div className="row-caveat" key={internships.company}>
                 <h3>{internships.company}</h3>
                 <p className="info">
                   {internships.title}
@@ -71,7 +73,7 @@ class Resume extends Component {
           } else {
             return (
               <div
-                className="row internships row-caveat"
+                className="internships-bottom-border row-caveat"
                 key={internships.company}
               >
                 <h3>{internships.company}</h3>
@@ -90,10 +92,20 @@ class Resume extends Component {
       );
 
       var skills = this.props.data.skills.map((skills) => {
-        
         return (
-          <li key={skills.name}>
-            <SkillsBar observer={null} name={skills.name} level={skills.level} />
+          <li key={skills.name} style={{
+            border: "1px solid black"}}>
+            <SkillsBar
+              observer={null}
+              name={skills.name}
+              level={skills.level}
+            />
+            <span style={{
+              float: "right",
+              padding: "13px"
+            }}>
+              {skills.level}
+            </span>
             <em>{skills.name}</em>
           </li>
         );
