@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
 
 function getColorGradientBasedOnSkill(skill) {
   if (skill < 10) return "#FF0000";
@@ -14,6 +16,7 @@ function getColorGradientBasedOnSkill(skill) {
 }
 
 function GetSkillLevelText(skill, skillName) {
+  if (skill === 0) return "";
   if (skill <= 30) return "Little experience using " + skillName;
   if (skill < 60) return "I have experience using " + skillName;
   if (skill < 80)
@@ -21,49 +24,61 @@ function GetSkillLevelText(skill, skillName) {
   else return "I am an expert at " + skillName;
 }
 
-const SkillsBar = ({ level, name, observer }) => {
+const SkillsBar = ({ level, name }) => {
+  const animation = useAnimation();
+  const [ref, inView, entry] = useInView({ threshold: 0 });
 
-    // const [ref, setRef] = React.useState(null);
+  const [progressBarPercent, setProgressBarPercent] = useState(0);
 
-    // // Observe and unobserve this paragraph
-    // React.useEffect(() => {
-    //   if (ref) {
-    //     observer.observe(ref);
-    //   }
-    //   return () => {
-    //     if (ref) {
-    //       observer.unobserve(ref);
-    //     }
-    //   };
-    // }, [observer, ref]);
+  useEffect(() => {
+    if (inView) {
+      setProgressBarPercent(level);
+    } else {
+      setProgressBarPercent(0);
+    }
+  }, [animation, inView]);
 
-
+  const variants = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, delayChilden: 0.2, staggerChildren: 0.1 },
+    },
+    hidden: {
+      y: entry,
+      opacity: 0,
+    },
+  };
 
   var className = "bar-expand " + name.toLowerCase();
-
-
-
   return (
     <span
-    // ref={setRef}
+      ref={ref}
+      animate={animation}
+      initial="hidden"
+      variants={{ variants }}
       style={{
-        width: level,
-        backgroundColor: getColorGradientBasedOnSkill(parseInt(level, 10)),
+        width: progressBarPercent,
+        backgroundColor: getColorGradientBasedOnSkill(
+          parseInt(progressBarPercent, 10)
+        ),
         textAlign: "center",
-        marginTop: "0.5px"
+        marginTop: "0.5px",
       }}
       className={className}
     >
       <span
         style={{
-          width: level,
+          width: progressBarPercent,
           fontWeight: 1000,
           color: "black",
         }}
       >
-        {GetSkillLevelText(parseInt(level, 10), name)}
+        {GetSkillLevelText(parseInt(progressBarPercent, 10), name)}
       </span>
     </span>
+
+    // <AnimatedBar width={400} percent={level} />
   );
 };
 

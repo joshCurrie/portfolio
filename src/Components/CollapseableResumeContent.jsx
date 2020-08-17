@@ -14,7 +14,7 @@ const CollapseableResumeContent = ({ Content }) => {
       <div onClick={() => isToggleOpened(!opened)}>
         <Collapse isOpened={opened}>
           {Content.map((value, index) => {
-            return <span>{value}</span>;
+            return <span key={"resumeContent-"+index}>{value}</span>;
           })}
         </Collapse>
 

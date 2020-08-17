@@ -96,7 +96,6 @@ class Resume extends Component {
           <li key={skills.name} style={{
             border: "1px solid black"}}>
             <SkillsBar
-              observer={null}
               name={skills.name}
               level={skills.level}
             />

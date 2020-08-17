@@ -385,6 +385,10 @@ ul#nav li.current a {
   height: 42px;
   line-height: 42px;
   border-radius: 0px;
+
+  
+  transition: 1s ease;
+  transition-delay: 0.1s;
 }
 /*
 .git {
@@ -510,6 +514,7 @@ ul#nav li.current a {
 .portfolio-item .item-wrap a {
   display: block;
   cursor: pointer;
+  height: 110px;
 }
 
 /* overlay */
@@ -1166,4 +1171,19 @@ footer .social-links li:first-child {
 
 .center-text {
   text-align: center;
+}
+
+
+/* Animated Progress bar */
+.progress-div {
+  background-color: rgb(233, 233, 233);
+  border-radius: .5rem;
+}
+
+.progress {
+  background-color: rgb(62, 122, 235);
+  height: 10px;
+  border-radius: 1rem;
+  transition: 1s ease;
+  transition-delay: 0.5s;
 }

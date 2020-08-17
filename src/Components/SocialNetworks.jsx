@@ -4,10 +4,6 @@ import styled from 'styled-components'
 
 const SocialNetworks = ({ NetworkData, Color }) => {
 
-    const customColoredA = styled.a`
-        color: ${Color};
-    `
-
     if (Color) {
         var style = "color: " + Color + ";";
     }
